@@ -1,31 +1,70 @@
 {
-  "name": "matching-game",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "matching-game",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-scripts": "3.1.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "lint": "standard --fix | snazzy"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,json,css}": [
+            "standard --fix | snazzy",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "standard": {
+        "parser": "babel-eslint",
+        "env": ["jest"]
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,mjs}"
+        ],
+        "devDependencies": {
+            "eslint": "^6.3.0",
+            "eslint-config-prettier": "^6.3.0",
+            "eslint-config-prettier-standard": "^3.0.1",
+            "eslint-config-standard": "^14.1.0",
+            "eslint-plugin-import": "^2.18.2",
+            "eslint-plugin-node": "^10.0.0",
+            "eslint-plugin-prettier": "^3.1.0",
+            "eslint-plugin-promise": "^4.2.1",
+            "eslint-plugin-standard": "^4.0.1",
+            "husky": "^3.0.5",
+            "lint-staged": "^9.2.5",
+            "prettier": "1.18.2",
+            "prettier-config-standard": "^1.0.1",
+            "snazzy": "^8.0.0"
+        }
+
+
+    }
 }
