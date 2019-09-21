@@ -7,6 +7,11 @@
     transform: rotateY(180deg);
 } */
 
+
+/* .card-item-inner:hover {
+    transform: rotateY(180deg);
+} */
+
 .card-item-inner {
     width: 10rem;
     min-height: 10rem;

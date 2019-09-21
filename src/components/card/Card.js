@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CardContext } from "../../contexts/CardContext";
 import PropTypes from "prop-types";
 import "./card.css";
 
-const Card = props => {
-  const { card } = props;
-  console.log(card);
+const Card = ({ card }) => {
+  const { handleCardClick } = useContext(CardContext);
+
+  // console.log(card);
+  const rotate = {
+    transform: "rotateY(180deg)"
+  };
   return (
-    <li key={card.id} className="card-item">
-      <div className="card-item-inner">
+    <li
+      key={card.id}
+      className="card-item"
+      onClick={() => handleCardClick(card.id)}
+    >
+      <div className="card-item-inner" style={card.flipped ? rotate : {}}>
         <div className="card card-back">{/* <p>this is a card</p> */}</div>
         <div className="card-front">
           <img
