@@ -6,7 +6,8 @@ function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState(data);
   const handleCardClick = id => {
-    cards.filter(card => card.id === id);
+    let card = cards.filter(card => card.id === id);
+    console.log(card);
     // setCard({ ...values, [event.target.id]: event.target.value });
   };
   return (
