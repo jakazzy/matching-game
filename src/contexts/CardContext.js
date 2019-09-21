@@ -28,9 +28,11 @@ function CardContextProvider(props) {
       if (flippedCards[0].name !== flippedCards[1].name) {
         turnedCards = [];
         flippedCards = [];
+        console.log(turnedCards, flippedCards, "here we are");
         return;
       }
-      if (flippedCards[0].name === flippedCards[1].name);
+      let len = flippedCards.length;
+      if (flippedCards[len - 2].name === flippedCards[len - 1].name);
       console.log("they are same");
 
       console.log(flippedCards, "name");
