@@ -5,7 +5,7 @@ import "./cardList.css";
 function CardList() {
   const { cards } = useContext(CardContext);
   return (
-    <ul class="container">
+    <ul className="container">
       {cards.map(card => {
         return <Card card={card} key={card.id} />;
       })}
