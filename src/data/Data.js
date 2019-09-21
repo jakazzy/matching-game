@@ -1,83 +1,115 @@
 const data = [
   {
     id: 1,
-    name: "Vue",
-    img: "vuejsimage"
+    name: "vue",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 2,
-    name: "Vue",
-    img: "Vuejsimage"
+    name: "vue",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 3,
-    name: "React",
-    img: "Reactjsimage"
+    name: "react",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 4,
-    name: "React",
-    img: "Reactjsimage"
+    name: "react",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 5,
-    name: "Angular",
-    img: "Angularjsimage"
+    name: "angular2",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 6,
-    name: "Angular",
-    img: "Angularjsimage"
+    name: "angular2",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 7,
     name: "meteor",
-    img: "Meteorjsimage"
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 8,
     name: "meteor",
-    img: "Meteorjsimage"
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 9,
-    name: "Ember",
-    img: "Emberjsimage"
+    name: "ember",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 10,
-    name: "Ember",
-    img: "Emberjsimage"
+    name: "ember",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 11,
-    name: "Svelte",
-    img: "Sveltejsimage"
+    name: "yeoman",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 12,
-    name: "Svelte",
-    img: "Sveltejsimage"
+    name: "yeoman",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 13,
-    name: "Electron",
-    img: "Electronjsimage"
+    name: "gulp",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 14,
-    name: "Electron",
-    img: "Electronjsimage"
+    name: "gulp",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 15,
-    name: "Reactnative",
-    img: "Reactnativejsimage"
+    name: "browserify",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   },
   {
     id: 16,
-    name: "Reactnative",
-    img: "Reactnativejsimage"
+    name: "browserify",
+    img:
+      "https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/",
+    flipped: false
   }
 ];
 
