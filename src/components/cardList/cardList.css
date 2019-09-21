@@ -1,0 +1,16 @@
+.container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 50rem;
+    margin: 0 auto;
+    height: 56rem;
+    padding-left: 0;
+}
+
+.container li {
+    list-style-type: none;
+}

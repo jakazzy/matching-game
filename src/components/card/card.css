@@ -1,0 +1,14 @@
+.card {
+    width: 10rem;
+    line-height: 10rem;
+    margin: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px;
+    /* Design for back of cards  credit: https://love2dev.com/blog/css-background-stripes/ */
+    background-color: #141214;
+    background-repeat: repeat-y;
+    background-size: 100% 88px;
+    background-position: 0% 0%;
+    background-image: repeating-linear-gradient( -25deg, #141214, #141214 20px, #ed1566 20px, #ed1566 40px, #141214 40px, #141214 60px, #008afc 60px, #008afc 80px);
+}
