@@ -5,9 +5,12 @@ export const CardContext = createContext();
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState(data);
-  const handleCardClick = () => {};
+  const handleCardClick = id => {
+    cards.filter(card => card.id === id);
+    // setCard({ ...values, [event.target.id]: event.target.value });
+  };
   return (
-    <CardContext.Provider value={{ cards }}>
+    <CardContext.Provider value={{ cards, handleCardClick }}>
       {props.children}
     </CardContext.Provider>
   );
