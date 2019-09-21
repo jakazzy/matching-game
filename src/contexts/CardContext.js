@@ -5,6 +5,7 @@ export const CardContext = createContext();
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState(data);
+  const handleCardClick = () => {};
   return (
     <CardContext.Provider value={{ cards }}>
       {props.children}

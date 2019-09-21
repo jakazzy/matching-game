@@ -4,7 +4,7 @@ import "./card.css";
 
 const Card = props => {
   return (
-    <li className="card">
+    <li className="card" onClick={"handle"}>
       <div id="card1">
         <p>this is a card</p>
       </div>
