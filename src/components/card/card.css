@@ -1,14 +1,44 @@
-.card {
+.card-item {
+    perspective: 1000px;
+}
+
+
+/* .card-item:hover .card-item-inner {
+    transform: rotateY(180deg);
+} */
+
+.card-item-inner {
     width: 10rem;
-    line-height: 10rem;
+    min-height: 10rem;
     margin: 0.5rem;
+    position: relative;
+    /* transform */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    border-radius: 5px;
     /* Design for back of cards  credit: https://love2dev.com/blog/css-background-stripes/ */
     background-color: #141214;
     background-repeat: repeat-y;
     background-size: 100% 88px;
     background-position: 0% 0%;
     background-image: repeating-linear-gradient( -25deg, #141214, #141214 20px, #ed1566 20px, #ed1566 40px, #141214 40px, #141214 60px, #008afc 60px, #008afc 80px);
+}
+
+.card-front,
+.card-back {
+    border-radius: 5px;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 10rem;
+    height: 10rem;
+}
+
+.card-front {
+    background-color: #141214;
+    transform: rotateY(180deg);
 }
