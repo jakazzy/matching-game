@@ -20,10 +20,11 @@ const Card = ({ card }) => {
       <div
         style={card.flipped ? rotate : {}}
         className={
-          card.isDisabled ? "card-item-inner shake" : "card-item-inner"
+          "card-item-inner" +
+          (card.isDisabled && card.flipped ? " shake " : " ")
         }
       >
-        <div className="card card-back">{/* <p>this is a card</p> */}</div>
+        <div className="card card-back"></div>
         <div className="card-front">
           <img
             src={card.img + card.name + ".png"}

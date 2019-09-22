@@ -14,9 +14,9 @@ function CardContextProvider(props) {
     });
     turnedCards.push(card);
     flippedCards.push(id);
-    console.log(cardlist);
-    setCard(cardlist);
 
+    setCard(cardlist);
+    console.log(cardlist);
     compareCard();
   };
 

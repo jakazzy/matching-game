@@ -49,7 +49,7 @@
 }
 
 .shake {
-    animation: shake 0.5s;
+    animation: shake 0.5s 0.4s;
     animation-iteration-count: 5s;
 }
 
@@ -87,4 +87,8 @@
     100% {
         transform: translate(1px, -2px) rotate(-1deg);
     }
+}
+
+.change {
+    background-color: #008afc !important
 }
