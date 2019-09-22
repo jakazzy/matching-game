@@ -32,9 +32,21 @@ function CardContextProvider(props) {
         flippedCards = [];
         return;
       }
-      if (turnedCards[0].name === turnedCards[1].name);
+      if (
+        turnedCards[0].name === turnedCards[1].name &&
+        flippedCards[0] === flippedCards[1]
+      ) {
+        turnedCards.pop();
+        flippedCards.pop();
 
-      console.log("they are now same");
+        return;
+      }
+
+      if (
+        turnedCards[0].name === turnedCards[1].name &&
+        flippedCards[0] !== flippedCards[1]
+      )
+        console.log("they are now same");
       console.log(cards, "these are cards in the comparecard");
       cards.map(card =>
         flippedCards.includes(card.id)
