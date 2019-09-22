@@ -10,13 +10,19 @@ const Card = ({ card }) => {
   const rotate = {
     transform: "rotateY(180deg)"
   };
+
   return (
     <li
       key={card.id}
       className="card-item"
-      onClick={() => handleCardClick(card.id)}
+      onClick={() => handleCardClick(card, card.id)}
     >
-      <div className="card-item-inner" style={card.flipped ? rotate : {}}>
+      <div
+        style={card.flipped ? rotate : {}}
+        className={
+          card.isDisabled ? "card-item-inner shake" : "card-item-inner"
+        }
+      >
         <div className="card card-back">{/* <p>this is a card</p> */}</div>
         <div className="card-front">
           <img
