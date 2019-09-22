@@ -4,6 +4,7 @@ export const CardContext = createContext();
 
 let turnedCards = [];
 let flippedCards = [];
+
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState(data);
@@ -14,14 +15,15 @@ function CardContextProvider(props) {
     });
     turnedCards.push(card);
     flippedCards.push(id);
-    console.log(cardlist);
-    setCard(cardlist);
 
+    setCard(cardlist);
+    console.log(cardlist, "should not have two");
     compareCard();
   };
 
   const compareCard = () => {
     console.log(turnedCards, "turnedCards");
+
     if (turnedCards.length < 2) return;
 
     if (turnedCards.length === 2) {
@@ -33,8 +35,8 @@ function CardContextProvider(props) {
       if (turnedCards[0].name === turnedCards[1].name);
 
       console.log("they are now same");
-
-      let listCards = cards.map(card =>
+      console.log(cards, "these are cards in the comparecard");
+      cards.map(card =>
         flippedCards.includes(card.id)
           ? Object.assign(card, { isDisabled: true })
           : card
@@ -42,7 +44,7 @@ function CardContextProvider(props) {
       turnedCards = [];
       flippedCards = [];
 
-      console.log(listCards, "disabled added");
+      // console.log(listCards, "disabled added");
     }
   };
 
