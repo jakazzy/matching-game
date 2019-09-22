@@ -7,6 +7,7 @@ const Card = ({ card }) => {
   const { handleCardClick } = useContext(CardContext);
 
   // console.log(card);
+
   const rotate = {
     transform: "rotateY(180deg)"
   };
@@ -25,7 +26,11 @@ const Card = ({ card }) => {
         }
       >
         <div className="card card-back"></div>
-        <div className="card-front">
+        <div
+          className={
+            "card-front" + (card.isDisabled && card.flipped ? " shake" : " ")
+          }
+        >
           <img
             src={card.img + card.name + ".png"}
             alt="JavaScript frontend library"

@@ -51,6 +51,8 @@
 .shake {
     animation: shake 0.5s 0.4s;
     animation-iteration-count: 5s;
+    animation-fill-mode: forwards;
+    border-radius: 5px;
 }
 
 @keyframes shake {
@@ -85,10 +87,7 @@
         transform: translate(1px, 2px) rotate(0deg);
     }
     100% {
-        transform: translate(1px, -2px) rotate(-1deg);
+        background-color: #ed1566
+        /* transform: translate(1px, -2px) rotate(-1deg); */
     }
-}
-
-.change {
-    background-color: #008afc !important
 }
