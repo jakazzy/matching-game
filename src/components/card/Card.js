@@ -15,7 +15,7 @@ const Card = ({ card }) => {
     <li
       key={card.id}
       className="card-item"
-      onClick={() => handleCardClick(card.id)}
+      onClick={() => handleCardClick(card, card.id)}
     >
       <div
         style={card.flipped ? rotate : {}}
