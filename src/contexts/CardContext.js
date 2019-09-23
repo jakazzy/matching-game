@@ -39,8 +39,6 @@ function CardContextProvider(props) {
   };
 
   const compareCard = () => {
-    console.log(turnedCards, "turnedCards");
-
     if (turnedCards.length < 2) return;
 
     if (turnedCards.length === 2) {
