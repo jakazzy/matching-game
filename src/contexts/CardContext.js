@@ -50,7 +50,6 @@ function CardContextProvider(props) {
               : card;
           });
           setCard(cardlist);
-          console.log(cardlist, "did it work");
         }, 1000);
 
         turnedCards = [];
