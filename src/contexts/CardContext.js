@@ -5,7 +5,7 @@ export const CardContext = createContext();
 
 let turnedCards = [];
 let flippedCards = [];
-
+let cardlist;
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState([]);
@@ -45,6 +45,16 @@ function CardContextProvider(props) {
 
     if (turnedCards.length === 2) {
       if (turnedCards[0].name !== turnedCards[1].name) {
+        setTimeout(() => {
+          cardlist = cards.map(card => {
+            return card.flipped
+              ? Object.assign(card, { flipped: false })
+              : card;
+          });
+          setCard(cardlist);
+          console.log(cardlist, "did it work");
+        }, 1000);
+
         turnedCards = [];
         flippedCards = [];
         return;
