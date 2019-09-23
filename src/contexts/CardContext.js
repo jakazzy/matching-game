@@ -9,7 +9,7 @@ let cardlist;
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState([]);
-  console.log(cards, "these are cards");
+
   const shuffle = array => {
     // reference: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/12646864#12646864
     let currentIndex = array.length,
@@ -39,8 +39,6 @@ function CardContextProvider(props) {
   };
 
   const compareCard = () => {
-    console.log(turnedCards, "turnedCards");
-
     if (turnedCards.length < 2) return;
 
     if (turnedCards.length === 2) {
@@ -52,7 +50,6 @@ function CardContextProvider(props) {
               : card;
           });
           setCard(cardlist);
-          console.log(cardlist, "did it work");
         }, 1000);
 
         turnedCards = [];
@@ -73,17 +70,13 @@ function CardContextProvider(props) {
         turnedCards[0].name === turnedCards[1].name &&
         flippedCards[0] !== flippedCards[1]
       )
-        console.log("they are now same");
-      console.log(cards, "these are cards in the comparecard");
-      cards.map(card =>
-        flippedCards.includes(card.id)
-          ? Object.assign(card, { isDisabled: true })
-          : card
-      );
+        cards.map(card =>
+          flippedCards.includes(card.id)
+            ? Object.assign(card, { isDisabled: true })
+            : card
+        );
       turnedCards = [];
       flippedCards = [];
-
-      // console.log(listCards, "disabled added");
     }
   };
 
