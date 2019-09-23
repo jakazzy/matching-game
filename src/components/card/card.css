@@ -2,16 +2,6 @@
     perspective: 1000px;
 }
 
-
-/* .card-item:hover .card-item-inner {
-    transform: rotateY(180deg);
-} */
-
-
-/* .card-item-inner:hover {
-    transform: rotateY(180deg);
-} */
-
 .card-item-inner {
     width: 10rem;
     min-height: 10rem;
