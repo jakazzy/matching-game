@@ -12,9 +12,7 @@ function CardList() {
       shuffle(array);
     };
     startGame(data);
-    // return () => {
-    //   cleanup;
-    // };
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
