@@ -11,9 +11,7 @@ const Card = ({ card }) => {
       className="card-item"
       onClick={() => handleCardClick(card, card.id)}
     >
-      {console.log(card.flipped, "dont waste time")}
       <div
-        // style={card.flipped ? rotate : {}}
         className={
           "card-item-inner" +
           (card.isDisabled && card.flipped ? " shake " : " ") +
