@@ -77,8 +77,6 @@ function CardContextProvider(props) {
         );
       turnedCards = [];
       flippedCards = [];
-
-      // console.log(listCards, "disabled added");
     }
   };
 
