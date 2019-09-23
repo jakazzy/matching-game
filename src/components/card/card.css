@@ -19,7 +19,7 @@
     position: relative;
     /* transform */
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 0.3s;
     transform-style: preserve-3d;
 }
 
@@ -87,7 +87,13 @@
         transform: translate(1px, 2px) rotate(0deg);
     }
     100% {
-        background-color: #ed1566
+        background-color: #ed1566;
         /* transform: translate(1px, -2px) rotate(-1deg); */
     }
 }
+
+.rotate {
+    transform: rotateY(180deg)
+}
+
+;

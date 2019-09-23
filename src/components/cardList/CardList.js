@@ -1,9 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "./../card/Card";
 import { CardContext } from "./../../contexts/CardContext";
 import "./cardList.css";
+import data from "../../data/Data";
+
 function CardList() {
-  const { cards } = useContext(CardContext);
+  const { shuffle, cards } = useContext(CardContext);
+
+  useEffect(() => {
+    const startGame = array => {
+      shuffle(array);
+    };
+    startGame(data);
+    // return () => {
+    //   cleanup;
+    // };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <ul className="container">
       {cards.map(card => {

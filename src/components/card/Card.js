@@ -5,24 +5,19 @@ import "./card.css";
 
 const Card = ({ card }) => {
   const { handleCardClick } = useContext(CardContext);
-
-  // console.log(card);
-
-  const rotate = {
-    transform: "rotateY(180deg)"
-  };
-
   return (
     <li
       key={card.id}
       className="card-item"
       onClick={() => handleCardClick(card, card.id)}
     >
+      {console.log(card.flipped, "dont waste time")}
       <div
-        style={card.flipped ? rotate : {}}
+        // style={card.flipped ? rotate : {}}
         className={
           "card-item-inner" +
-          (card.isDisabled && card.flipped ? " shake " : " ")
+          (card.isDisabled && card.flipped ? " shake " : " ") +
+          (card.flipped ? "rotate" : "")
         }
       >
         <div className="card card-back"></div>
