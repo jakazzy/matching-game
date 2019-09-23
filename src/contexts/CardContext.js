@@ -70,13 +70,11 @@ function CardContextProvider(props) {
         turnedCards[0].name === turnedCards[1].name &&
         flippedCards[0] !== flippedCards[1]
       )
-        console.log("they are now same");
-      console.log(cards, "these are cards in the comparecard");
-      cards.map(card =>
-        flippedCards.includes(card.id)
-          ? Object.assign(card, { isDisabled: true })
-          : card
-      );
+        cards.map(card =>
+          flippedCards.includes(card.id)
+            ? Object.assign(card, { isDisabled: true })
+            : card
+        );
       turnedCards = [];
       flippedCards = [];
 
