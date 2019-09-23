@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
-import data from "../data/Data";
+// import data from "../data/Data";
+
 export const CardContext = createContext();
 
 let turnedCards = [];
@@ -7,17 +8,33 @@ let flippedCards = [];
 
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
-  const [cards, setCard] = useState(data);
+  const [cards, setCard] = useState([]);
+  console.log(cards, "these are cards");
+  const shuffle = array => {
+    // reference: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array/12646864#12646864
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    setCard(array);
+    return array;
+  };
 
   const handleCardClick = (card, id) => {
-    let cardlist = cards.map(card => {
-      return id === card.id ? Object.assign(card, { flipped: true }) : card;
-    });
+    setCard(
+      cards.map(card => {
+        return id === card.id ? Object.assign(card, { flipped: true }) : card;
+      })
+    );
     turnedCards.push(card);
     flippedCards.push(id);
 
-    setCard(cardlist);
-    console.log(cardlist, "should not have two");
     compareCard();
   };
 
@@ -61,7 +78,7 @@ function CardContextProvider(props) {
   };
 
   return (
-    <CardContext.Provider value={{ cards, handleCardClick }}>
+    <CardContext.Provider value={{ cards, handleCardClick, shuffle }}>
       {props.children}
     </CardContext.Provider>
   );
