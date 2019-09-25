@@ -36,6 +36,12 @@
 .card-front {
     background-color: #141214;
     transform: rotateY(180deg);
+    text-align: center;
+}
+
+.front-lib {
+    padding: 1.2rem;
+    vertical-align: middle
 }
 
 .shake {

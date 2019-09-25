@@ -45,7 +45,7 @@ function CardContextProvider(props) {
       if (turnedCards[0].name !== turnedCards[1].name) {
         setTimeout(() => {
           cardlist = cards.map(card => {
-            return card.flipped
+            return card.flipped && !card.isDisabled
               ? Object.assign(card, { flipped: false })
               : card;
           });

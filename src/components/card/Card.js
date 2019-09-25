@@ -25,6 +25,7 @@ const Card = ({ card }) => {
           }
         >
           <img
+            className="front-lib"
             src={card.img + card.name + ".png"}
             alt="JavaScript frontend library"
           />
