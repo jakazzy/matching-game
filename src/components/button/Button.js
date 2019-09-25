@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CardContext } from "../../contexts/CardContext";
+// import data from "../../data/Data";
 import "./button.css";
 
 function Button() {
+  const { shuffle, cards } = useContext(CardContext);
+  const newGame = cards => {
+    if (cards) {
+      shuffle(cards);
+    }
+  };
   return (
     <div>
-      <button className="button">Start</button>
+      <button onClick={() => newGame(cards)} className="button">
+        Start
+      </button>
     </div>
   );
 }
