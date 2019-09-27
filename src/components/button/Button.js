@@ -4,15 +4,11 @@ import { CardContext } from "../../contexts/CardContext";
 import "./button.css";
 
 function Button() {
-  const { shuffle, cards } = useContext(CardContext);
-  const newGame = cards => {
-    if (cards) {
-      shuffle(cards);
-    }
-  };
+  const { restart } = useContext(CardContext);
+
   return (
     <div>
-      <button onClick={() => newGame(cards)} className="button">
+      <button onClick={() => restart()} className="button">
         Start
       </button>
     </div>
