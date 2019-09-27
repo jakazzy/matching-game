@@ -10,11 +10,9 @@ const Board = () => {
       <div id="title">
         <h1>card game</h1>
         <h2>Let's have fun! Match all the cards with their pairs.</h2>
-        <CardContextProvider>
-          <Button />
-        </CardContextProvider>
       </div>
       <CardContextProvider>
+        <Button />
         <CardList />
       </CardContextProvider>
     </div>
