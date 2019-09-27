@@ -58,6 +58,8 @@ function CardContextProvider(props) {
     console.log(Object.is(cards, values), "compare us please");
     setCard(newCards);
     // }, 10);
+    turnedCards = [];
+    flippedCards = [];
     console.log(cards, "do you work");
   };
 
