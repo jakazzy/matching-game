@@ -2,12 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import Card from "./../card/Card";
 import { CardContext } from "./../../contexts/CardContext";
 import "./cardList.css";
-// import data from "../../data/Data";
 
 const CardList = () => {
   const { startGame, cards, match } = useContext(CardContext);
   const [show, setShow] = useState(false);
-  // let isClosed = true;
 
   useEffect(() => {
     startGame();
@@ -35,18 +33,15 @@ const CardList = () => {
             <span onClick={closed} className="close">
               &times;
             </span>
-            <h2>Modal Header</h2>
+            <h2>Congratulations!!!</h2>
           </div>
           <div className="modal-body">
-            <p>Some text in the Modal Body</p>
-            <p>Some other text...</p>
-          </div>
-          <div className="modal-footer">
-            <h3>Modal Footer</h3>
+            <p>You have successfully completed the card game.</p>
+            <p>Kudos!!!!!!!!!</p>
           </div>
         </div>
       </div>
-      {/* Modal close */}
+
       <ul className="container">
         {console.log(cards, "these are the cards being presented")}
         {cards.map(card => {
