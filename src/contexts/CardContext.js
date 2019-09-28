@@ -9,11 +9,10 @@ let cardlist;
 function CardContextProvider(props) {
   // eslint-disable-next-line no-unused-vars
   const [cards, setCard] = useState([]);
-  // const [, forceUpdate] = useState(x => x + 1, 0);
+  const [match, setMatch] = useState(1);
 
   useEffect(() => {
     console.log(cards, "here we are today too");
-    // setCard(cards);
     return () => {};
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cards]);
@@ -33,22 +32,16 @@ function CardContextProvider(props) {
 
     setCard(array);
     console.log(array, "this is the array you mentioned");
-    // forceUpdate();
 
     return array;
   };
 
-  // const deepCopy = value => {
-  //   return JSON.parse(JSON.stringify(value));
-  // };
   const startGame = () => {
     shuffle(data);
   };
 
   const restart = () => {
     const values = shuffle(data);
-    // let newCards;
-    // setTimeout(() => {
     let newCards = values.map(value =>
       Object.assign(value, {
         isDisabled: false,
@@ -57,7 +50,6 @@ function CardContextProvider(props) {
     );
     console.log(Object.is(cards, values), "compare us please");
     setCard(newCards);
-    // }, 10);
     turnedCards = [];
     flippedCards = [];
     console.log(cards, "do you work");
@@ -109,11 +101,17 @@ function CardContextProvider(props) {
         turnedCards[0].name === turnedCards[1].name &&
         flippedCards[0] !== flippedCards[1]
       )
-        cards.map(card =>
-          flippedCards.includes(card.id)
-            ? Object.assign(card, { isDisabled: true })
-            : card
-        );
+        setMatch(match + 1);
+      console.log(
+        "These number of cards ",
+        match,
+        "match*******************************"
+      );
+      cards.map(card =>
+        flippedCards.includes(card.id)
+          ? Object.assign(card, { isDisabled: true })
+          : card
+      );
       turnedCards = [];
       flippedCards = [];
     }
@@ -121,7 +119,7 @@ function CardContextProvider(props) {
 
   return (
     <CardContext.Provider
-      value={{ cards, handleCardClick, startGame, shuffle, restart }}
+      value={{ cards, handleCardClick, startGame, shuffle, restart, match }}
     >
       {props.children}
     </CardContext.Provider>
