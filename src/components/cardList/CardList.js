@@ -18,7 +18,6 @@ const CardList = () => {
 
   const closed = () => {
     setShow(true);
-    console.log("change", show);
   };
 
   return (
@@ -27,7 +26,6 @@ const CardList = () => {
         id="myModal"
         className={"modal " + (!show && val ? "visible" : "hidden")}
       >
-        {console.log("show:", !show, val, "you there")}
         <div className="modal-content">
           <div className="modal-header">
             <span onClick={closed} className="close">
@@ -43,7 +41,6 @@ const CardList = () => {
       </div>
 
       <ul className="container">
-        {console.log(cards, "these are the cards being presented")}
         {cards.map(card => {
           return <Card card={card} key={card.id} />;
         })}
