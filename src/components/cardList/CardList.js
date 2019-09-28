@@ -25,9 +25,7 @@ const CardList = () => {
       <div
         id="myModal"
         className={"modal " + (!show && val ? "visible" : "hidden")}
-        // className={"modal " + (true && true ? "visible" : "hidden")}
       >
-        {/* {console.log("show: and val:", !show, val)} */}
         <div className="modal-content">
           <div className="modal-header">
             <span onClick={closed} className="close">

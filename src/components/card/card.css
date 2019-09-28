@@ -1,3 +1,48 @@
+/* 
+
+.front-lib {
+    
+    padding: 0.4rem;
+    margin: 0 auto;
+    display: block;
+    vertical-align: middle;
+    width: 4rem;
+    height: 4rem; */
+
+
+/* For mobile screens */
+
+@media only screen and (max-width: 400px) {
+    .front-lib {
+        padding: 0.4rem;
+        margin: 0 auto;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+    }
+    .card-item-inner {
+        width: 5rem;
+        min-height: 5rem;
+        margin: 0.5rem;
+        position: relative;
+        /* transform */
+        text-align: center;
+        transition: transform 0.3s;
+        transform-style: preserve-3d;
+    }
+    .card-front,
+    .card-back {
+        border-radius: 5px;
+        position: absolute;
+        backface-visibility: hidden;
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+
+/* End of scrrens for mobile */
+
 .card-item {
     perspective: 1000px;
 }

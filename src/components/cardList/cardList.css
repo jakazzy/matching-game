@@ -1,3 +1,23 @@
+/* for mobile screens */
+
+@media only screen and (max-width: 400px) {
+    .container {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        width: 24rem;
+        margin: 0 auto;
+        height: 24rem;
+        padding-left: 0;
+    }
+}
+
+
+/* end mobile screens */
+
 .container {
     box-sizing: border-box;
     display: flex;
