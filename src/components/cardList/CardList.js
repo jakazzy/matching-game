@@ -1,29 +1,52 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Card from "./../card/Card";
 import { CardContext } from "./../../contexts/CardContext";
 import "./cardList.css";
-// import data from "../../data/Data";
 
-function CardList() {
-  const { startGame, cards } = useContext(CardContext);
+const CardList = () => {
+  const { startGame, cards, match } = useContext(CardContext);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    // const startGame = array => {
-    //   shuffle(array);
-    // };
-    // startGame(data);
     startGame();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  let val = false;
+  if (match === 9 && !show) {
+    val = true;
+  }
+
+  const closed = () => {
+    setShow(true);
+  };
 
   return (
-    <ul className="container">
-      {console.log(cards, "these are the cards being presented")}
-      {cards.map(card => {
-        return <Card card={card} key={card.id} />;
-      })}
-    </ul>
+    <div>
+      <div
+        id="myModal"
+        className={"modal " + (!show && val ? "visible" : "hidden")}
+      >
+        <div className="modal-content">
+          <div className="modal-header">
+            <span onClick={closed} className="close">
+              &times;
+            </span>
+            <h2>Congratulations!!!</h2>
+          </div>
+          <div className="modal-body">
+            <p>You have successfully completed the card game.</p>
+            <p>Kudos!!!!!!!!!</p>
+          </div>
+        </div>
+      </div>
+
+      <ul className="container">
+        {cards.map(card => {
+          return <Card card={card} key={card.id} />;
+        })}
+      </ul>
+    </div>
   );
-}
+};
 
 export default CardList;
